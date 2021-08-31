@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>summernote-ext-table</title>
+
+  <!-- include jquery -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+  <!-- include libs stylesheets -->
+  <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+  <script src="./bootstrap-4.3.1-dist/js/bootstrap.bundle.js" ></script>
+
+  <!-- include summernote -->
+  <link rel="stylesheet" href="./summernote-0.8.18-dist/summernote-bs4.css">
+  <script type="text/javascript" src="./summernote-0.8.18-dist/summernote-bs4.js"></script>    
+
+    <link href="./summernote-ext-table.css" rel="stylesheet" type="text/css" />
+    <script src="./summernote-ext-table.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                lang   : "ko-KR",
+                height : 300,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+                    ['fontname', ['fontname', 'fontsize', 'color']],
+                    ['para', ['ul', 'ol', 'paragraph', 'height']],
+                    ['insert', ['hr', 'jTable', 'link', 'picture']],
+                    ['misc', ['undo', 'redo', 'fullscreen']],
+                ],
+                popover: {
+                    table: [
+                        ['merge', ['jMerge']],
+                        ['style', ['jBackcolor', 'jBorderColor', 'jAlign', 'jAddDeleteRowCol']],
+                        ['info', ['jTableInfo']],
+                        ['delete', ['jWidthHeightReset', 'deleteTable']],
+                    ]
+                },
+                jTable : {
+                    /**
+                     * drag || dialog
+                     */
+                    mergeMode: 'drag'
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<div id="summernote">
+</div>
+
+</body>
+</html>
